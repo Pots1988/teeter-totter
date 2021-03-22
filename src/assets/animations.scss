@@ -1,0 +1,43 @@
+$animation-time: 1s;
+$animation-function: linear;
+$animation-direction: alternate;
+$animation-count: infinite;
+
+@keyframes warning {
+  to {
+    background-color: var(--warning);
+  }
+}
+
+@keyframes danger {
+  to {
+    background-color: var(--danger);
+  }
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(-100);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.warning {
+  animation: $animation-time $animation-function $animation-count $animation-direction warning;
+}
+
+.danger {
+  animation: $animation-time $animation-function $animation-count $animation-direction danger;
+}
+
+.appear {
+  $time: 0.3s;
+  $count: 1;
+  $mode: forwards;
+  animation: appear $time $count $mode;
+}
